@@ -1,0 +1,3 @@
+# Quick way to list the container’s mount points (what’s mapped inside the container ↔ on your Mac).
+
+docker inspect -f '{{range .Mounts}}{{.Destination}} -> {{.Source}}{{printf "\n"}}{{end}}' spark-iceberg
