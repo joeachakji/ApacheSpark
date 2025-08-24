@@ -1,0 +1,11 @@
+# Quick cheats
+
+# See host↔container ports:
+
+docker ps --format 'table {{.Names}}\t{{.Ports}}'
+
+#See mounts for a container:
+
+docker inspect -f '{{range .Mounts}}{{.Destination}} -> {{.Source}}{{"\n"}}{{end}}' spark-iceberg
+
+
