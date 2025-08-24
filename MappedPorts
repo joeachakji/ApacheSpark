@@ -4,3 +4,6 @@ docker ps --format '{{.Names}}\t{{.Ports}}' \
                  gsub("/tcp","",a[i]); split(a[i],b,"->");
                  printf "%-18s %-28s -> %-22s\n", name, b[1], b[2]
               }}'
+
+#Human-Friendly listing of Docker Ports for spark-iceberg
+docker port spark-iceberg
