@@ -1,0 +1,6 @@
+docker ps --format '{{.Names}}\t{{.Ports}}' \
+| awk -F'\t' 'BEGIN{printf "%-18s %-28s %-2s %-22s\n","NAME","HOST","", "CONTAINER"}
+              {name=$1; n=split($2,a,", "); for(i=1;i<=n;i++){
+                 gsub("/tcp","",a[i]); split(a[i],b,"->");
+                 printf "%-18s %-28s -> %-22s\n", name, b[1], b[2]
+              }}'
